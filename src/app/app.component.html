@@ -1,0 +1,87 @@
+<div>
+  <div>
+  <h1>TASK #1(Simple Table)</h1>
+<h3 style="margin-left: 5%;">Inputs:</h3>
+<div style="margin-left: 5%;">
+  <div><input type="text" [(ngModel)]="desc" placeholder="Description"></div>
+  <div><input type="text" [(ngModel)]="name" placeholder="Name"></div>
+  <div><input type="text" [(ngModel)]="size" placeholder="Size"></div>
+</div>
+
+<button style="margin-left: 5%; margin-top: 1%; width: 100px ;text-decoration: none; border-radius: 5%; color: blueviolet; cursor: pointer;" (click)="addProp()">ADD</button>
+
+
+    <div style="margin-top: 5%;">
+      <table>
+        <tr>
+          <th>S.No.</th>
+          <th>Description</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let item of propertyArr; let i=index">
+
+          <td>
+            {{i+1}}
+          </td>
+          <td>
+            {{item.desc}}
+          </td>
+          <td>
+            {{item.name}}
+          </td>
+          <td>
+            {{item.size}}
+          </td>
+          <td>
+            <button (click)="deleteRow(i)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+</div>
+
+<div style="margin-top: 8%;">
+  <h1>TASK #2(Air Table)</h1>
+  <h3 style="margin-left: 5%;">Inputs:</h3>
+  <div style="margin-left: 5%;">
+    <div><input type="text" [(ngModel)]="descAir" placeholder="Description"></div>
+    <div><input type="text" [(ngModel)]="nameAir" placeholder="Name"></div>
+    <div><input type="text" [(ngModel)]="sizeAir" placeholder="Size"></div>
+  </div>
+  
+  <button style="margin-left: 5%; margin-top: 1%; width: 100px ;text-decoration: none; border-radius: 5%; color: blueviolet; cursor: pointer;" (click)="addPropAir()">ADD</button>
+  
+  <div style="margin-top: 5%;">
+    <table>
+      <tr>
+        <th>S.No.</th>
+        <th>Description</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let item of airTableData; let i=index">
+  
+        <td>
+          {{i+1}}
+        </td>
+        <td>
+          {{item.fields.desc}}
+        </td>
+        <td>
+          {{item.fields.name}}
+        </td>
+        <td>
+          {{item.fields.size}}
+        </td>
+        <td>
+          <button (click)="deleteRowAir(item.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  
+</div>
